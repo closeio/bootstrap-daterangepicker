@@ -437,6 +437,7 @@
         },
 
         show: function (e) {
+            this.element.addClass('active');
             this.container.show();
             this.visible = true;
             this.move();
@@ -461,6 +462,7 @@
             if (!e || !e.target || e.target.tagName !== 'INPUT') {
                 this.container.hide();
                 this.visible = false;
+                this.element.removeClass('active');
                 $(document).off('mousedown', this.hide);
                 $(document).off('mousedown', this.handleBlur);
 
